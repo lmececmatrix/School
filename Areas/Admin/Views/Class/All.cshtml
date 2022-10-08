@@ -1,0 +1,44 @@
+﻿@model List<ClassModel>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Striped Table</h4>
+        <p class="card-description">
+        Add class <code>.table-striped</code>
+        </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Age</th>
+                        <th>Date</th>
+                        <th>TutionFee</th>
+                        <th>TotalSeats</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach(var cls in Model) {
+                        <tr>
+                            <td class="py-1"><img src="@cls.ImageUrl" alt="image"></td>
+                            <td>@cls.Name</td>
+                            <td>@cls.Description</td>
+                            <td>@cls.StartAge - @cls.EndAge</td>
+                            <td>@cls.StartTime - @cls.EndTime</td>
+                            <td>@cls.TutionFee</td>
+                            <td>@cls.TotalSeats</td>
+                            <td>
+                                <a class="btn btn-primary">Edit</a>
+                                <a class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
